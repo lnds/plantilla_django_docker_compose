@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <h1>{% trans '¿Quiere borrar este post?' %}</h1>
+        <div class="container">
+            <h2>{{ object.title }}</h2>
+            <p>
+                {{ object.text }}
+            </p>
+            <hr>
+            <b>{% trans 'Categoría:' %}</b> {{ object.category }}
+            <br>
+            <b>{% trans 'Etiquetas:' %}</b> {{ object.tags }}
+        </div>
+
+        <br>
+        <button type="submit" class="btn btn-danger">{% trans 'Eliminar' %}</button>
+        <a href="{% url 'home' %}" class="btn btn-info">volver</a>
+    </form>
+
+
+{% endblock %}

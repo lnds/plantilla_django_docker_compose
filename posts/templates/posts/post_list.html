@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load i18n bootstrap4 %}
+{% block content %}
+    <div class="jumbotron">
+        <h4>{% trans 'Bienvenido a mi blog' %}</h4>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if object_list %}
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <th>{% trans 'Título' %}</th>
+                        <th>{% trans 'Fecha' %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for post in object_list %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'view' post.id %}">
+                                    {{ post.title }}
+                                </a>
+                            </td>
+                            <td>{{ post.date }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                    <div class="pull-right">
+                        {% block pagination %}
+                            {% bootstrap_pagination page_obj %}
+                        {% endblock %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

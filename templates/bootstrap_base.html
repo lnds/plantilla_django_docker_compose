@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+{% load fontawesome_5 %}
+{% if 'use_i18n'|bootstrap_setting %}
+    {% load i18n %}
+    {% get_current_language as LANGUAGE_CODE %}
+{% endif %}
+{% load static %}
+<html lang="{{ LANGUAGE_CODE|default:'en_us' }}">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="software de gestion y administracion de condominio">
+    <meta name="author" content="ConTuDominio">
+    <!-- Page title -->
+    <title>{% block bootstrap4_title %}django-bootstrap4 template title{% endblock %}</title>
+
+    {% fontawesome_5_static %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    {% block bootstrap4_extra_head %}{% endblock %}
+
+</head>
+
+<body>
+{% block bootstrap4_before_content %}{% endblock %}
+{% block bootstrap4_content %} CONTENT {% endblock %}
+{% block bootstrap4_after_content %}{% endblock %}
+
+
+{% block bootstrap4_extra_script %}{% endblock %}
+
+</body>
+
+</html>

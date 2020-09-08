@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load i18n bootstrap4 %}
+{% block content %}
+    <h1>{% trans 'Ingresar' %}</h1>
+    <form class="form-signin" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form layout='inline' %}
+        <button type="submit" class="btn btn-info">{% trans 'Ingresar' %}</button>
+    </form>
+{% endblock %}

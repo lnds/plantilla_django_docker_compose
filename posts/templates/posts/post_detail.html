@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <h1>{{ object.title }}</h1>
+    <p>
+    {{ object.text }}
+    </p>
+    <hr>
+    <b>{% trans 'Categoría:' %}</b> {{ object.category }}
+    <br>
+    <b>{% trans 'Etiquetas:' %}</b> {{ object.tags }}
+    <br>
+    <br>
+    <a href="{% url 'home' %}" class="btn btn-info">{% trans 'Volver' %}</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'edit' object.id %}" class="btn btn-primary">{% trans 'Editar' %}</a>
+    <a href="{% url 'delete' object.id %}" class="btn btn-danger">{% trans 'Eliminar' %}</a>
+    {% endif %}
+{% endblock %}
