@@ -22,8 +22,12 @@ Antes de empezar configurar el archivo .env, el archivo .env-sample contiene un 
     $ docker-compose up --build
     
 Se incluye una aplicación simple (e incompleta) de gestión de posts en un blog.
+
+# Atención
+
+Esta app configura un usuario admin por default usando el mecanismo disponible en Django, ver en el archivo `runserver.sh` la llamada a `python manage.py createsuperuser`, esta se debe modificar para crear un usuario distinto a admin y cambiar el email.
     
-# Licencia
+#  Licencia
 
 Uso libre, django y los otros elementos usados en este proyecto tienen sus respectivas licencias.
 
