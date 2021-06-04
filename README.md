@@ -2,7 +2,7 @@
 
 Esta es una plantilla para armar proyectos usando:
 
-- Python 3.8
+- Python 3.9
 - Pipenv
 - Postgresql
 - Django 3.1
@@ -18,7 +18,6 @@ Y se despliega en docker-compose.
 
 Antes de empezar configurar el archivo .env, el archivo .env-sample contiene un ejemplo, luego:
 
-    $ pipenv install --dev
     $ docker-compose up --build
     
 Se incluye una aplicación simple (e incompleta) de gestión de posts en un blog.
@@ -31,7 +30,7 @@ Esta app configura un usuario admin por default usando el mecanismo disponible e
 
 Uso libre, django y los otros elementos usados en este proyecto tienen sus respectivas licencias.
 
-2019 Eduardo Díaz
+2019-2021 Eduardo Díaz
 
     
     
