@@ -34,3 +34,8 @@ Uso libre, django y los otros elementos usados en este proyecto tienen sus respe
 
     
     
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
